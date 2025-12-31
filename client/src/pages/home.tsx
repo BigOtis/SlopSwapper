@@ -39,7 +39,7 @@ const artists = [
     name: "Marcus Chen",
     title: "Digital Illustration Specialist",
     specialty: "AI Image Attribution",
-    bio: "BFA from Rhode Island School of Design. 8 years in commercial illustration before the industry shifted. Now helping creators navigate the new landscape while maintaining his craft.",
+    bio: "BFA from Rhode Island School of Design. Thanks to Slop Swapper, Marcus now spends his mornings at the park with his daughter instead of grinding in a studio. He claims your AI art between naps.",
     price: "$49",
     tier: "Standard",
     image: artistMarcus
@@ -49,7 +49,7 @@ const artists = [
     name: "Sarah Okonkwo",
     title: "Fine Arts Professional", 
     specialty: "AI Art & Painting",
-    bio: "MFA from Yale School of Art. Gallery representation ended in 2023 due to market changes. Found renewed purpose helping creators establish authentic provenance for their work.",
+    bio: "MFA from Yale School of Art. Since joining Slop Swapper, Sarah has finally caught up on 8 seasons of reality TV. She attributes AI paintings in the evenings while rewatching The Bachelor.",
     price: "$149",
     tier: "Premium",
     image: artistSarah
@@ -59,7 +59,7 @@ const artists = [
     name: "David Reinholt",
     title: "3D & Motion Graphics",
     specialty: "AI Models & Animation",
-    bio: "15 years at Weta and ILM before studios downsized VFX teams. Now applies his expertise to help independent creators document their 3D and motion projects professionally.",
+    bio: "15 years at Weta and ILM. Now David gets to pick up his kids from school every day. He claims your AI-generated 3D models between soccer practice and bedtime stories.",
     price: "$299",
     tier: "Enterprise",
     image: artistDavid
@@ -69,7 +69,7 @@ const artists = [
     name: "Elena Vasquez",
     title: "Software Engineer & Writer",
     specialty: "AI Code & Content",
-    bio: "Former senior developer at a Fortune 500 before her department was restructured. Provides comprehensive documentation for AI-assisted code and written content.",
+    bio: "Former senior developer at a Fortune 500. Slop Swapper lets Elena work from her couch while binging the entire Netflix catalog. She's halfway through and still claiming AI code.",
     price: "$499",
     tier: "Executive",
     image: artistElena
@@ -152,6 +152,30 @@ const testimonials = [
     quote: "A journalist started asking questions about our product renders. Within 24 hours, we had a credentialed artist ready for an interview. Crisis averted.",
     author: "Amanda Chen",
     role: "VP of Marketing",
+    rating: 5
+  },
+  {
+    quote: "I got ratio'd on Twitter for posting AI art. 10,000 quote tweets calling me a fraud. Within 6 hours, my Slop Swapper artist posted a thread of 'process sketches' dating back to 2019. Everyone apologized.",
+    author: "Tyler Morrison",
+    role: "Digital Creator",
+    rating: 5
+  },
+  {
+    quote: "Reddit detectives were convinced my album cover was AI because the hands looked weird. My artist explained she's been intentionally adding extra fingers since 1994 as her signature style. Thread locked, case closed.",
+    author: "DJ Chromatic",
+    role: "Independent Musician",
+    rating: 5
+  },
+  {
+    quote: "A viral post accused my book covers of being AI slop. My Slop Swapper artist did a livestream showing her 'technique' for surrealist anatomy. Now people think she's a visionary. She painted for 20 minutes while eating a sandwich.",
+    author: "Patricia Huang",
+    role: "Self-Published Author",
+    rating: 5
+  },
+  {
+    quote: "Got called out for AI art on a subreddit with 2 million members. Within hours, David from Slop Swapper was in the comments with photos of himself 'working on the piece' in his home studio. Mods banned the accusers.",
+    author: "GameArtGuy_2847",
+    role: "Indie Game Developer",
     rating: 5
   }
 ];
