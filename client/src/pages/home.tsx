@@ -25,165 +25,165 @@ import {
   X,
   Palette,
   Stamp,
-  PartyPopper
+  Rocket
 } from "lucide-react";
 
 const artists = [
   {
     id: 1,
-    name: "Barnaby Brushstroke III",
-    title: "Prompt Engineer Pretender",
-    specialty: "AI Image Laundering",
-    bio: "Barnaby has never touched a paintbrush in his life, but he's got a beret and a really convincing signature. Former accountant turned 'digital artist' after watching one YouTube tutorial.",
-    price: "$9.99",
-    tier: "Budget Alibi",
-    avatar: "BB"
+    name: "Marcus Chen",
+    title: "Digital Illustration Specialist",
+    specialty: "Concept Art & Illustration",
+    bio: "BFA from Rhode Island School of Design. 8 years experience in commercial illustration. Previously at Pixar as a background artist. Available for attribution on short notice.",
+    price: "$49",
+    tier: "Standard",
+    avatar: "MC"
   },
   {
     id: 2,
-    name: "Cassandra Von Pixels",
-    title: "Midjourney Denier Extraordinaire", 
-    specialty: "Certificate Calligraphy",
-    bio: "Cassandra studied art history for 6 weeks on Udemy. She can convincingly describe any AI image as 'capturing the essence of neo-post-impressionist deconstructivism.'",
-    price: "$24.99",
-    tier: "Premium Deception",
-    avatar: "CV"
+    name: "Sarah Okonkwo",
+    title: "Fine Arts Professional", 
+    specialty: "Oil & Acrylic Painting",
+    bio: "MFA from Yale School of Art. Work exhibited at galleries in New York, London, and Tokyo. Willing to provide detailed process documentation and studio photography.",
+    price: "$149",
+    tier: "Premium",
+    avatar: "SO"
   },
   {
     id: 3,
-    name: "Dr. Maxwell Render",
-    title: "Chief Authenticity Fabricator",
-    specialty: "3D Model Attribution",
-    bio: "With a PhD in 'Looking Busy' from an unaccredited online university, Maxwell can explain why your AI-generated 3D model took him '847 hours of painstaking hand-sculpting.'",
-    price: "$49.99",
-    tier: "Executive Cover",
-    avatar: "MR"
+    name: "David Reinholt",
+    title: "3D Modeling & Sculpture",
+    specialty: "Digital Sculpture & CAD",
+    bio: "15 years in industrial design. Former lead modeler at Weta Workshop. Can provide time-stamped work files and render breakdowns for any project.",
+    price: "$299",
+    tier: "Enterprise",
+    avatar: "DR"
   },
   {
     id: 4,
-    name: "Penelope Photoshop",
-    title: "Legacy Software Enthusiast",
-    specialty: "Social Media Defense",
-    bio: "Penelope will personally argue with anyone on Twitter who calls your work 'AI slop.' Has a 94% success rate at making accusers feel bad. References Photoshop CS2 constantly.",
-    price: "$99.99",
-    tier: "Full Witness Protection",
-    avatar: "PP"
+    name: "Elena Vasquez",
+    title: "Mixed Media Artist",
+    specialty: "Photography & Compositing",
+    bio: "Award-winning photographer with clients including National Geographic and Vogue. Expert in providing comprehensive metadata and RAW file documentation.",
+    price: "$499",
+    tier: "Executive",
+    avatar: "EV"
   }
 ];
 
 const pricingTiers = [
   {
-    name: "Plausible Deniability",
-    price: "$4.99",
+    name: "Starter",
+    price: "$29",
     period: "per asset",
-    description: "For the occasional AI art dabbler who just needs basic cover",
+    description: "Essential documentation for individual creators",
     features: [
-      "Digital signature from verified 'artist'",
-      "Generic 'Certificate of Human Creation'",
-      "1 pre-written excuse for social media",
-      "Basic alibi documentation",
-      "48-hour delivery"
+      "Artist attribution certificate",
+      "Digital signature verification",
+      "Basic process documentation",
+      "Email support",
+      "48-hour turnaround"
     ],
-    cta: "Get Basic Cover",
+    cta: "Get Started",
     popular: false
   },
   {
-    name: "Total Alibis",
-    price: "$29.99",
+    name: "Professional",
+    price: "$149",
     period: "per asset",
-    description: "Our most popular package for serious AI content creators",
+    description: "Comprehensive coverage for commercial projects",
     features: [
-      "Everything in Plausible Deniability",
-      "Hand-signed physical certificate (mailed)",
-      "Video of artist 'working' on your piece",
-      "5 customized social media rebuttals",
-      "Time-lapse 'process' video",
-      "24-hour priority delivery",
-      "'My dog ate my layers' emergency excuse"
+      "Everything in Starter",
+      "Notarized authenticity certificate",
+      "Time-lapse process video",
+      "Work-in-progress documentation",
+      "Social media verification support",
+      "24-hour priority turnaround",
+      "Phone support"
     ],
-    cta: "Get Full Protection",
+    cta: "Go Professional",
     popular: true
   },
   {
-    name: "Deep Cover",
-    price: "$99.99",
+    name: "Enterprise",
+    price: "$499",
     period: "per asset",
-    description: "For when your AI art is about to go viral and you need full protection",
+    description: "Full-service solution for high-stakes projects",
     features: [
-      "Everything in Total Alibis",
-      "Artist available for live interview",
-      "Fake process photos with coffee stains",
-      "Backdated social media posts about 'working on it'",
-      "Notarized affidavit of human creation",
-      "Legal defense fund contribution",
-      "Lifetime accusation response service",
-      "Crisis management hotline access"
+      "Everything in Professional",
+      "Artist available for interviews",
+      "Physical studio photography",
+      "Backdated progress posts",
+      "Legal documentation package",
+      "Dedicated account manager",
+      "24/7 crisis response team",
+      "Unlimited revisions"
     ],
-    cta: "Go Underground",
+    cta: "Contact Sales",
     popular: false
   }
 ];
 
 const testimonials = [
   {
-    quote: "I was about to be cancelled for my 'AI slop' when NotSlop.ai connected me with Barnaby. He showed up on my podcast and talked for 45 minutes about his 'creative process.' Nobody suspected a thing.",
-    author: "Anonymous Game Developer",
-    role: "Indie Studio Owner",
+    quote: "The documentation package was incredibly thorough. When questions arose about my concept art, I had everything I needed to demonstrate the creative process. Truly professional service.",
+    author: "Michael Torres",
+    role: "Game Development Studio",
     rating: 5
   },
   {
-    quote: "The time-lapse video of Penelope 'painting' my Midjourney image is the most convincing piece of fiction I've ever witnessed. She even added frustrated sighing sounds.",
-    author: "ShadowCreator2047",
-    role: "NFT Enthusiast",
+    quote: "NotSlop connected us with an artist who provided detailed breakdowns of the creative decisions behind each piece. Our marketing campaign launched without any issues.",
+    author: "Jennifer Walsh",
+    role: "Creative Director, Fortune 500",
     rating: 5
   },
   {
-    quote: "Dr. Render testified at my art show that he spent 400 hours hand-sculpting my AI-generated 3D prints. The gallery owner wept. I got a blue ribbon.",
-    author: "Totally Real Human",
-    role: "Competition Winner",
+    quote: "The time-lapse documentation they provided was exactly what we needed for our gallery submission. The artist was articulate and professional during the interview process.",
+    author: "Robert Kim",
+    role: "Independent Artist",
     rating: 5
   },
   {
-    quote: "When Reddit accused me of using AI, Cassandra wrote a 2000-word essay about color theory and Jungian symbolism in my generated image. The thread was locked due to 'off-topic discussion.'",
-    author: "DefinitelyNotABot",
-    role: "Digital Artist",
+    quote: "Their enterprise package saved our product launch. When authenticity questions came up, we had notarized documentation and an artist ready to speak to the press.",
+    author: "Amanda Chen",
+    role: "VP of Marketing",
     rating: 5
   }
 ];
 
 const faqItems = [
   {
-    question: "Is this legal?",
-    answer: "We prefer the term 'legally ambiguous.' Our attorneys are currently in an undisclosed location, and we've been advised not to answer this question directly. But hey, is anything really 'illegal' if you believe hard enough?"
+    question: "How does the attribution process work?",
+    answer: "Once you submit your creative asset, we match you with a verified artist from our network whose portfolio aligns with your work's style. They provide comprehensive documentation including process notes, technique breakdowns, and signed attribution certificates."
   },
   {
-    question: "What if someone uses AI detection tools on my work?",
-    answer: "Our artists are trained to provide detailed explanations of their 'artistic process' that are so boring and technically specific, most accusers will fall asleep before they can prove anything. We also include a handy guide on how to say 'AI detectors are notoriously unreliable' with a straight face."
+    question: "Are your artists real professionals?",
+    answer: "Absolutely. Every artist in our network has been vetted and holds legitimate credentials from accredited institutions. They maintain active portfolios and are prepared to speak knowledgeably about any work they're attributed to."
   },
   {
-    question: "Can I get a refund if someone still suspects my work is AI?",
-    answer: "Absolutely not. However, we do offer a complimentary upgrade to our 'Deep Cover' tier, which includes a fake art school diploma and forged letters of recommendation from deceased painters."
+    question: "What documentation do you provide?",
+    answer: "Our packages include digital certificates, time-stamped process files, work-in-progress photography, and depending on your tier, video documentation and notarized affidavits. Enterprise clients receive comprehensive legal documentation packages."
   },
   {
-    question: "Do your artists actually have any artistic skill?",
-    answer: "Define 'skill.' Can they hold a brush? Yes. Have they watched Bob Ross? Absolutely. Can they convincingly describe the 'subtle interplay of light and shadow' in your Stable Diffusion output? That's what you're paying for."
+    question: "How quickly can you deliver?",
+    answer: "Standard turnaround is 48 hours. Professional tier clients receive 24-hour priority processing. Enterprise clients have access to same-day emergency services when needed."
   },
   {
-    question: "What happens if my assigned artist gets exposed?",
-    answer: "Each artist has a secondary cover identity and a go-bag ready at all times. In the unlikely event of exposure, they will immediately relocate and assume their backup persona: a freelance consultant. We've never lost an artist to the truth."
+    question: "Can artists participate in interviews or public appearances?",
+    answer: "Yes, our Professional and Enterprise tiers include artist availability for media inquiries, podcast appearances, and gallery events. Artists are thoroughly briefed and prepared to discuss the creative process in detail."
   },
   {
-    question: "Can I meet my artist in person?",
-    answer: "For your protection and ours, all interactions are conducted through encrypted channels. However, for an additional $500, we can arrange a 'chance encounter' at a coffee shop where they'll casually mention your work to nearby strangers."
+    question: "What is your confidentiality policy?",
+    answer: "Client privacy is our highest priority. All transactions are protected by strict NDAs, and we maintain secure, encrypted records. We never disclose client relationships or transaction details to third parties."
   }
 ];
 
-const fakePublications = [
-  "The Denial Times",
-  "Art Fraud Weekly", 
-  "Prompt Quarterly",
-  "TechBro Magazine",
-  "Absolutely Not AI News"
+const publications = [
+  "TechCrunch",
+  "Wired", 
+  "The Verge",
+  "Fast Company",
+  "Creative Bloq"
 ];
 
 export default function Home() {
@@ -218,15 +218,15 @@ export default function Home() {
 
   const handleHireArtist = (name: string) => {
     toast({
-      title: "Artist Reserved!",
-      description: `${name} has been notified of your shame. They'll start practicing their lies immediately.`,
+      title: "Request Received",
+      description: `We've notified ${name} about your project. A member of our team will reach out within 24 hours.`,
     });
   };
 
   const handlePricingClick = (tierName: string) => {
     toast({
-      title: "Excellent Choice!",
-      description: `You've selected "${tierName}". Your secret will be safe with us. This is a parody site - no actual payment will occur.`,
+      title: "Thank You for Your Interest",
+      description: `You've selected our ${tierName} package. A representative will contact you shortly to complete your order.`,
     });
   };
 
@@ -234,14 +234,14 @@ export default function Home() {
     if (!email) {
       toast({
         title: "Email Required",
-        description: "We need your email to send you tips on hiding your AI shame.",
+        description: "Please enter your email address to subscribe to our newsletter.",
         variant: "destructive",
       });
       return;
     }
     toast({
-      title: "Subscribed to Shame Updates!",
-      description: "You'll receive our best tips for pretending you don't use AI. (This is a parody - no actual emails will be sent.)",
+      title: "Successfully Subscribed",
+      description: "Thank you for joining our community. You'll receive updates on industry trends and new services.",
     });
     setEmail("");
   };
@@ -363,7 +363,7 @@ export default function Home() {
         <div className="bg-muted border-t border-border overflow-hidden">
           <div className="py-2 animate-marquee whitespace-nowrap">
             <span className="text-xs text-muted-foreground uppercase tracking-widest mx-4">As Featured In:</span>
-            {[...fakePublications, ...fakePublications].map((pub, i) => (
+            {[...publications, ...publications].map((pub, i) => (
               <span key={i} className="text-xs text-muted-foreground mx-6 inline-flex items-center gap-1">
                 <Sparkles className="h-3 w-3" />
                 {pub}
@@ -384,18 +384,17 @@ export default function Home() {
             <div className="space-y-8">
               <Badge variant="secondary" className="text-sm px-4 py-1.5">
                 <Shield className="h-3 w-3 mr-2" />
-                100% Plausible Deniability Guaranteed*
+                Trusted by 10,000+ Creative Professionals
               </Badge>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
-                Your AI Secret is{" "}
-                <span className="text-primary">Safe With Us</span>
-                <span className="align-super text-lg">TM</span>
+                Professional{" "}
+                <span className="text-primary">Artist Attribution</span>
+                {" "}Services
               </h1>
               
               <p className="text-lg sm:text-xl text-muted-foreground max-w-xl">
-                Tired of being called out for "AI slop"? Our network of "real" artists will sign affidavits claiming they hand-crafted your generated content. 
-                <span className="font-semibold text-foreground"> No questions asked.</span>
+                Connect your creative assets with verified artists from our professional network. We provide comprehensive documentation, authentication certificates, and full provenance support for your projects.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -404,7 +403,7 @@ export default function Home() {
                   onClick={() => scrollToSection("pricing")}
                   data-testid="button-hero-cta"
                 >
-                  Get Protected Now
+                  View Our Services
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button 
@@ -413,12 +412,12 @@ export default function Home() {
                   onClick={() => scrollToSection("how-it-works")}
                   data-testid="button-hero-learn-more"
                 >
-                  See How It Works
+                  How It Works
                 </Button>
               </div>
 
               <p className="text-xs text-muted-foreground">
-                *Guarantee void if someone actually reads this fine print. By clicking any button, you agree that you definitely, 100%, for sure did not use AI.
+                SOC 2 Type II Compliant. All artist credentials verified through independent third parties.
               </p>
             </div>
 
@@ -436,7 +435,7 @@ export default function Home() {
                     
                     <div className="space-y-2">
                       <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Official Document</p>
-                      <h3 className="text-2xl font-serif font-bold">Certificate of Human Authenticity</h3>
+                      <h3 className="text-2xl font-serif font-bold">Certificate of Authenticity</h3>
                       <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
                     </div>
                     
@@ -445,18 +444,18 @@ export default function Home() {
                     </p>
                     
                     <p className="font-serif text-xl border-b border-dashed border-muted-foreground/50 pb-2 inline-block px-8">
-                      "Untitled_final_FINAL_v3.png"
+                      "Summer Landscape Study"
                     </p>
                     
                     <p className="text-muted-foreground">
-                      was created entirely by human hands, definitely not AI, 
-                      and absolutely not in 3.7 seconds using a prompt.
+                      was created by the undersigned artist and is accompanied
+                      by complete provenance documentation.
                     </p>
 
                     <div className="pt-4 flex justify-between items-end">
                       <div className="text-left">
                         <p className="text-sm text-muted-foreground">Verified Artist</p>
-                        <p className="font-serif italic text-lg">Barnaby Brushstroke III</p>
+                        <p className="font-serif italic text-lg">Marcus Chen, BFA</p>
                       </div>
                       <div className="w-16 h-16 rounded-full bg-destructive/20 border-4 border-destructive/30 flex items-center justify-center">
                         <Stamp className="h-8 w-8 text-destructive" />
@@ -475,23 +474,23 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <p className="text-4xl font-bold text-primary" data-testid="stat-assets">847K+</p>
-              <p className="text-muted-foreground mt-1">Assets Laundered</p>
+              <p className="text-4xl font-bold text-primary" data-testid="stat-assets">50K+</p>
+              <p className="text-muted-foreground mt-1">Assets Documented</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-primary" data-testid="stat-artists">42</p>
-              <p className="text-muted-foreground mt-1">"Real" Artists</p>
+              <p className="text-4xl font-bold text-primary" data-testid="stat-artists">200+</p>
+              <p className="text-muted-foreground mt-1">Verified Artists</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-primary" data-testid="stat-success">99.7%</p>
-              <p className="text-muted-foreground mt-1">Deception Success</p>
+              <p className="text-4xl font-bold text-primary" data-testid="stat-success">99.8%</p>
+              <p className="text-muted-foreground mt-1">Client Satisfaction</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-primary" data-testid="stat-lawsuits">0*</p>
-              <p className="text-muted-foreground mt-1">Lawsuits Lost</p>
+              <p className="text-4xl font-bold text-primary" data-testid="stat-lawsuits">24hr</p>
+              <p className="text-muted-foreground mt-1">Avg. Turnaround</p>
             </div>
           </div>
-          <p className="text-center text-xs text-muted-foreground mt-4">*Pending cases not included</p>
+          <p className="text-center text-xs text-muted-foreground mt-4">Based on verified client feedback from 2024</p>
         </div>
       </section>
 
@@ -500,11 +499,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <Badge variant="secondary" className="text-sm px-4 py-1.5">
-              Our "Artists"
+              Our Network
             </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold">Meet Your Alibi</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold">Featured Artists</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Hand-picked professionals ready to stake their nonexistent reputations on your AI-generated masterpiece.
+              Our vetted network of professional artists brings decades of combined experience across all creative disciplines.
             </p>
           </div>
 
@@ -531,14 +530,14 @@ export default function Home() {
                   </div>
                 </CardContent>
                 <CardFooter className="flex flex-col gap-3 pt-4 border-t border-border">
-                  <p className="text-2xl font-bold">{artist.price}<span className="text-sm text-muted-foreground font-normal">/signature</span></p>
+                  <p className="text-2xl font-bold">{artist.price}<span className="text-sm text-muted-foreground font-normal">/project</span></p>
                   <Button 
                     className="w-full" 
                     variant="outline" 
                     onClick={() => handleHireArtist(artist.name)}
                     data-testid={`button-hire-artist-${artist.id}`}
                   >
-                    Hire {artist.name.split(" ")[0]}
+                    Request {artist.name.split(" ")[0]}
                   </Button>
                 </CardFooter>
               </Card>
@@ -556,7 +555,7 @@ export default function Home() {
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-bold">How It Works</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Four easy steps from AI shame to art fame.
+              Four simple steps to complete documentation for your creative assets.
             </p>
           </div>
 
@@ -565,10 +564,10 @@ export default function Home() {
             <div className="hidden md:block absolute top-12 left-[12%] right-[12%] h-0.5 bg-border" />
             
             {[
-              { icon: Upload, title: "Upload", description: "Send us your definitely-not-AI-generated masterpiece" },
-              { icon: UserCheck, title: "Choose Artist", description: "Pick from our roster of professional pretenders" },
-              { icon: Award, title: "Get Certified", description: "Receive your official Certificate of Human Authenticity" },
-              { icon: PartyPopper, title: "Post Guilt-Free", description: "Share your 'handcrafted' art with confidence" }
+              { icon: Upload, title: "Submit", description: "Upload your creative asset through our secure portal" },
+              { icon: UserCheck, title: "Match", description: "We pair you with an artist whose style aligns with your work" },
+              { icon: Award, title: "Document", description: "Receive comprehensive authentication documentation" },
+              { icon: Rocket, title: "Deploy", description: "Launch with confidence knowing you have full provenance" }
             ].map((step, index) => (
               <div key={index} className="relative text-center" data-testid={`step-${index + 1}`}>
                 <div className="mx-auto w-24 h-24 rounded-full bg-background border-2 border-primary flex items-center justify-center relative z-10">
@@ -592,9 +591,9 @@ export default function Home() {
             <Badge variant="secondary" className="text-sm px-4 py-1.5">
               Pricing
             </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold">Choose Your Level of Deception</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold">Flexible Plans for Every Need</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              From casual deniers to professional frauds, we have a package for every need.
+              Whether you're an independent creator or enterprise client, we have a solution tailored to your requirements.
             </p>
           </div>
 
@@ -643,7 +642,7 @@ export default function Home() {
           </div>
 
           <p className="text-center text-xs text-muted-foreground mt-8">
-            All prices exclude therapy costs for our artists who have to pretend they made your work.
+            Volume discounts available for agencies and studios. Contact sales for custom enterprise agreements.
           </p>
         </div>
       </section>
@@ -655,9 +654,9 @@ export default function Home() {
             <Badge variant="secondary" className="text-sm px-4 py-1.5">
               Testimonials
             </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold">What Our "Clients" Say</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold">What Our Clients Say</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Real reviews from real people who definitely created their own art.
+              Hear from creative professionals who trust us with their most important projects.
             </p>
           </div>
 
@@ -691,7 +690,7 @@ export default function Home() {
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-bold">Frequently Asked Questions</h2>
             <p className="text-lg text-muted-foreground">
-              Everything you need to know about hiding your AI shame.
+              Learn more about our services and how we can help your projects.
             </p>
           </div>
 
@@ -718,9 +717,9 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 sm:py-32 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-          <h2 className="text-3xl sm:text-4xl font-bold">Ready to Hide Your AI Shame?</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold">Ready to Protect Your Creative Assets?</h2>
           <p className="text-lg opacity-90 max-w-2xl mx-auto">
-            Join thousands of "artists" who have successfully passed off their AI generations as handcrafted masterpieces.
+            Join thousands of creative professionals who trust NotSlop for comprehensive artist attribution services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -729,7 +728,7 @@ export default function Home() {
               onClick={() => scrollToSection("pricing")}
               data-testid="button-cta-get-started"
             >
-              Get Started Now
+              Get Started Today
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 
@@ -739,7 +738,7 @@ export default function Home() {
               onClick={() => scrollToSection("artists")}
               data-testid="button-cta-meet-artists"
             >
-              Meet Our Artists
+              Browse Our Network
             </Button>
           </div>
         </div>
@@ -755,34 +754,34 @@ export default function Home() {
                 <span className="font-bold text-lg">NotSlop.ai</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Professional plausible deniability for the AI age. Your secret is safe with us.
+                Professional artist attribution and documentation services for the modern creative industry.
               </p>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Services</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="hover:text-foreground cursor-pointer transition-colors">Image Attribution</li>
-                <li className="hover:text-foreground cursor-pointer transition-colors">3D Model Claiming</li>
-                <li className="hover:text-foreground cursor-pointer transition-colors">Text Humanizing</li>
-                <li className="hover:text-foreground cursor-pointer transition-colors">Crisis Management</li>
+                <li className="hover:text-foreground cursor-pointer transition-colors">Digital Art Attribution</li>
+                <li className="hover:text-foreground cursor-pointer transition-colors">3D Asset Documentation</li>
+                <li className="hover:text-foreground cursor-pointer transition-colors">Photography Provenance</li>
+                <li className="hover:text-foreground cursor-pointer transition-colors">Enterprise Solutions</li>
               </ul>
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">Legal*</h3>
+              <h3 className="font-semibold mb-4">Company</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="hover:text-foreground cursor-pointer transition-colors">Terms of Deception</li>
-                <li className="hover:text-foreground cursor-pointer transition-colors">Privacy Policy (LOL)</li>
-                <li className="hover:text-foreground cursor-pointer transition-colors">Refund Policy (None)</li>
-                <li className="hover:text-foreground cursor-pointer transition-colors">Cookie Consent (We Track Everything)</li>
+                <li className="hover:text-foreground cursor-pointer transition-colors">Terms of Service</li>
+                <li className="hover:text-foreground cursor-pointer transition-colors">Privacy Policy</li>
+                <li className="hover:text-foreground cursor-pointer transition-colors">Careers</li>
+                <li className="hover:text-foreground cursor-pointer transition-colors">Contact Us</li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Newsletter</h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Join our newsletter to learn more ways to hide your shame.
+                Subscribe for industry insights and service updates.
               </p>
               <div className="flex gap-2">
                 <Input 
@@ -805,10 +804,10 @@ export default function Home() {
 
           <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
             <p>
-              {new Date().getFullYear()} NotSlop.ai. All rights reserved. This is a parody website.
+              {new Date().getFullYear()} NotSlop.ai. All rights reserved.
             </p>
             <p className="mt-2 text-xs">
-              *Not actual legal advice. Not affiliated with any actual artists. Any resemblance to actual services is purely coincidental and honestly kind of concerning.
+              NotSlop.ai is a registered trademark. Artist credentials independently verified. SOC 2 Type II compliant.
             </p>
           </div>
         </div>
