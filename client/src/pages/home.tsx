@@ -81,11 +81,11 @@ const pricingTiers = [
     name: "Starter",
     price: "$29",
     period: "per asset",
-    description: "Essential documentation for individual creators",
+    description: "Basic human attribution for your AI content",
     features: [
       "Artist attribution certificate",
-      "Digital signature verification",
-      "Basic process documentation",
+      "Digital signature from real human",
+      "Basic process sketch recreation",
       "Email support",
       "48-hour turnaround"
     ],
@@ -96,13 +96,13 @@ const pricingTiers = [
     name: "Professional",
     price: "$149",
     period: "per asset",
-    description: "Comprehensive coverage for commercial projects",
+    description: "Full paper trail for commercial AI content",
     features: [
       "Everything in Starter",
       "Notarized authenticity certificate",
-      "Time-lapse process video",
-      "Work-in-progress documentation",
-      "Social media verification support",
+      "Fabricated time-lapse process video",
+      "Backdated WIP documentation",
+      "Social media verification posts",
       "24-hour priority turnaround",
       "Phone support"
     ],
@@ -113,16 +113,16 @@ const pricingTiers = [
     name: "Enterprise",
     price: "$499",
     period: "per asset",
-    description: "Full-service solution for high-stakes projects",
+    description: "Crisis-ready human front for high-stakes projects",
     features: [
       "Everything in Professional",
-      "Artist available for interviews",
-      "Physical studio photography",
-      "Backdated progress posts",
+      "Artist available for press interviews",
+      "Physical studio photography of 'creation'",
+      "Backdated social media posts",
       "Legal documentation package",
       "Dedicated account manager",
       "24/7 crisis response team",
-      "Unlimited revisions"
+      "Unlimited story revisions"
     ],
     cta: "Contact Sales",
     popular: false
@@ -131,25 +131,25 @@ const pricingTiers = [
 
 const testimonials = [
   {
-    quote: "The documentation package was incredibly thorough. When questions arose about my concept art, I had everything I needed to demonstrate the creative process. Truly professional service.",
+    quote: "We needed concept art for our game fast. The AI output was great, but our publisher required human attribution. Slop Swapper's artist even did a making-of video. No one questioned it.",
     author: "Michael Torres",
     role: "Game Development Studio",
     rating: 5
   },
   {
-    quote: "NotSlop connected us with an artist who provided detailed breakdowns of the creative decisions behind each piece. Our marketing campaign launched without any issues.",
+    quote: "Our agency generates hundreds of marketing assets with AI. Slop Swapper provides the human provenance our enterprise clients require. It's just good business.",
     author: "Jennifer Walsh",
     role: "Creative Director, Fortune 500",
     rating: 5
   },
   {
-    quote: "The time-lapse documentation they provided was exactly what we needed for our gallery submission. The artist was articulate and professional during the interview process.",
+    quote: "I submitted AI-generated pieces to a juried exhibition. With the documentation and a real artist willing to claim the work, I won second place. Very professional service.",
     author: "Robert Kim",
-    role: "Independent Artist",
+    role: "Gallery Exhibitor",
     rating: 5
   },
   {
-    quote: "Their enterprise package saved our product launch. When authenticity questions came up, we had notarized documentation and an artist ready to speak to the press.",
+    quote: "A journalist started asking questions about our product renders. Within 24 hours, we had a credentialed artist ready for an interview. Crisis averted.",
     author: "Amanda Chen",
     role: "VP of Marketing",
     rating: 5
@@ -158,28 +158,28 @@ const testimonials = [
 
 const faqItems = [
   {
-    question: "How does the attribution process work?",
-    answer: "Once you submit your creative asset, we match you with a verified artist from our network whose portfolio aligns with your work's style. They provide comprehensive documentation including process notes, technique breakdowns, and signed attribution certificates."
+    question: "How does AI content laundering work?",
+    answer: "You upload your AI-generated content and we match you with a displaced creative professional. They create backdated work-in-progress files, sketch concepts, and process documentation that establishes them as the original creator. They sign certificates and are available to vouch for the work."
   },
   {
-    question: "Are your artists real professionals?",
-    answer: "Absolutely. Every artist in our network has been vetted and holds legitimate credentials from accredited institutions. They maintain active portfolios and are prepared to speak knowledgeably about any work they're attributed to."
+    question: "Are these real artists with real credentials?",
+    answer: "Absolutely. Every artist in our network has been vetted and holds legitimate credentials from accredited institutions. Many were laid off when AI replaced their jobs. They maintain active portfolios and are prepared to speak knowledgeably about any work they claim as their own."
   },
   {
-    question: "What documentation do you provide?",
-    answer: "Our packages include digital certificates, time-stamped process files, work-in-progress photography, and depending on your tier, video documentation and notarized affidavits. Enterprise clients receive comprehensive legal documentation packages."
+    question: "What if someone runs AI detection on my content?",
+    answer: "AI detection tools analyze the content itself, not the provenance. With our documentation package, you have a verified human artist with a degree, a portfolio, and a backstory ready to explain every creative decision. That's much more convincing than any automated detector."
   },
   {
-    question: "How quickly can you deliver?",
-    answer: "Standard turnaround is 48 hours. Professional tier clients receive 24-hour priority processing. Enterprise clients have access to same-day emergency services when needed."
+    question: "Why do artists agree to do this?",
+    answer: "Many talented professionals have lost their livelihoods to AI. Slop Swapper gives them a way to monetize the credentials they worked years to earn. It's a win-win: you get human verification, they get income in a disrupted economy."
   },
   {
-    question: "Can artists participate in interviews or public appearances?",
-    answer: "Yes, our Professional and Enterprise tiers include artist availability for media inquiries, podcast appearances, and gallery events. Artists are thoroughly briefed and prepared to discuss the creative process in detail."
+    question: "Can artists do interviews or public appearances?",
+    answer: "Yes, our Professional and Enterprise tiers include artist availability for media inquiries, podcast appearances, and gallery events. Artists are thoroughly briefed on your content and prepared to discuss the 'creative process' in convincing detail."
   },
   {
     question: "What is your confidentiality policy?",
-    answer: "Client privacy is our highest priority. All transactions are protected by strict NDAs, and we maintain secure, encrypted records. We never disclose client relationships or transaction details to third parties."
+    answer: "Client privacy is our highest priority. All transactions are protected by strict NDAs, and we maintain secure, encrypted records. We never disclose client relationships or transaction details to third parties. Your secret is safe with us."
   }
 ];
 
@@ -259,7 +259,7 @@ export default function Home() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-2">
               <Shield className="h-8 w-8 text-primary" />
-              <span className="font-bold text-xl tracking-tight">NotSlop.ai</span>
+              <span className="font-bold text-xl tracking-tight">Slop Swapper</span>
             </div>
             
             {/* Desktop Navigation */}
@@ -389,17 +389,16 @@ export default function Home() {
             <div className="space-y-8">
               <Badge variant="secondary" className="text-sm px-4 py-1.5">
                 <Shield className="h-3 w-3 mr-2" />
-                Trusted by 10,000+ Creative Professionals
+                The Leading AI Content Laundering Platform
               </Badge>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
-                Professional{" "}
-                <span className="text-primary">Artist Attribution</span>
-                {" "}Services
+                Turn AI Slop Into{" "}
+                <span className="text-primary">Human-Made Art</span>
               </h1>
               
               <p className="text-lg sm:text-xl text-muted-foreground max-w-xl">
-                Connect your creative assets with verified artists from our professional network. As AI transforms creative industries, we help displaced professionals monetize their credentials while providing you with comprehensive documentation and authentication.
+                Upload your AI-generated images, code, writing, or video. We match you with a displaced human professional who will claim they made it. Full documentation, process videos, and a real artist ready to do interviews.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -422,7 +421,7 @@ export default function Home() {
               </div>
 
               <p className="text-xs text-muted-foreground">
-                SOC 2 Type II Compliant. All artist credentials verified through independent third parties.
+                100% undetectable. SOC 2 Type II Compliant. All artist credentials verified through independent third parties.
               </p>
             </div>
 
@@ -480,11 +479,11 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <p className="text-4xl font-bold text-primary" data-testid="stat-assets">50K+</p>
-              <p className="text-muted-foreground mt-1">Assets Documented</p>
+              <p className="text-muted-foreground mt-1">AI Assets Laundered</p>
             </div>
             <div>
               <p className="text-4xl font-bold text-primary" data-testid="stat-artists">200+</p>
-              <p className="text-muted-foreground mt-1">Verified Artists</p>
+              <p className="text-muted-foreground mt-1">Displaced Artists</p>
             </div>
             <div>
               <p className="text-4xl font-bold text-primary" data-testid="stat-success">99.8%</p>
@@ -508,7 +507,7 @@ export default function Home() {
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-bold">Artists Finding New Opportunities</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The creative industry is changing rapidly. Our network consists of talented professionals whose traditional roles have been impacted by automation. NotSlop gives them a meaningful way to continue earning from their expertise and credentials.
+              AI is replacing creative professionals at an unprecedented rate. Our network consists of talented artists, designers, and developers whose jobs have been eliminated. Slop Swapper gives them a new revenue stream: claiming authorship of AI-generated content so you don't have to.
             </p>
           </div>
 
@@ -562,9 +561,9 @@ export default function Home() {
             <Badge variant="secondary" className="text-sm px-4 py-1.5">
               Simple Process
             </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold">How It Works</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold">How AI Laundering Works</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Four simple steps to complete documentation for your creative assets.
+              Four simple steps to convert your AI-generated content into verified human-made originals.
             </p>
           </div>
 
@@ -573,10 +572,10 @@ export default function Home() {
             <div className="hidden md:block absolute top-12 left-[12%] right-[12%] h-0.5 bg-border" />
             
             {[
-              { icon: Upload, title: "Submit", description: "Upload your creative asset through our secure portal" },
-              { icon: UserCheck, title: "Match", description: "We pair you with an artist whose style aligns with your work" },
-              { icon: Award, title: "Document", description: "Receive comprehensive authentication documentation" },
-              { icon: Rocket, title: "Deploy", description: "Launch with confidence knowing you have full provenance" }
+              { icon: Upload, title: "Upload Slop", description: "Submit your AI-generated image, code, video, or writing" },
+              { icon: UserCheck, title: "Match Artist", description: "We pair you with an unemployed human whose portfolio matches your content" },
+              { icon: Award, title: "Create Paper Trail", description: "Artist generates backdated WIP files, process videos, and sketches" },
+              { icon: Rocket, title: "Claim Authorship", description: "Receive certificates and an artist ready to speak to press" }
             ].map((step, index) => (
               <div key={index} className="relative text-center" data-testid={`step-${index + 1}`}>
                 <div className="mx-auto w-24 h-24 rounded-full bg-background border-2 border-primary flex items-center justify-center relative z-10">
@@ -726,9 +725,9 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 sm:py-32 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-          <h2 className="text-3xl sm:text-4xl font-bold">Ready to Protect Your Creative Assets?</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold">Ready to Make Your AI Content Human?</h2>
           <p className="text-lg opacity-90 max-w-2xl mx-auto">
-            Join thousands of creative professionals who trust NotSlop for comprehensive artist attribution services.
+            Join thousands of creators who trust Slop Swapper to transform their AI-generated content into human-certified originals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -760,7 +759,7 @@ export default function Home() {
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <Shield className="h-6 w-6 text-primary" />
-                <span className="font-bold text-lg">NotSlop.ai</span>
+                <span className="font-bold text-lg">Slop Swapper</span>
               </div>
               <p className="text-sm text-muted-foreground">
                 Professional artist attribution and documentation services for the modern creative industry.
@@ -813,10 +812,10 @@ export default function Home() {
 
           <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
             <p>
-              {new Date().getFullYear()} NotSlop.ai. All rights reserved.
+              {new Date().getFullYear()} Slop Swapper. All rights reserved.
             </p>
             <p className="mt-2 text-xs">
-              NotSlop.ai is a registered trademark. Artist credentials independently verified. SOC 2 Type II compliant.
+              Slop Swapper is a registered trademark. Artist credentials independently verified. SOC 2 Type II compliant.
             </p>
           </div>
         </div>
