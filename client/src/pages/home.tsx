@@ -28,46 +28,51 @@ import {
   Rocket
 } from "lucide-react";
 
+import artistMarcus from "@assets/stock_images/professional_headsho_bcd552c4.jpg";
+import artistSarah from "@assets/stock_images/professional_headsho_c88337f9.jpg";
+import artistDavid from "@assets/stock_images/professional_headsho_c5e7bfe4.jpg";
+import artistElena from "@assets/stock_images/professional_headsho_c3a2ab65.jpg";
+
 const artists = [
   {
     id: 1,
     name: "Marcus Chen",
     title: "Digital Illustration Specialist",
-    specialty: "Concept Art & Illustration",
-    bio: "BFA from Rhode Island School of Design. 8 years experience in commercial illustration. Previously at Pixar as a background artist. Available for attribution on short notice.",
+    specialty: "AI Image Attribution",
+    bio: "BFA from Rhode Island School of Design. 8 years in commercial illustration before the industry shifted. Now helping creators navigate the new landscape while maintaining his craft.",
     price: "$49",
     tier: "Standard",
-    avatar: "MC"
+    image: artistMarcus
   },
   {
     id: 2,
     name: "Sarah Okonkwo",
     title: "Fine Arts Professional", 
-    specialty: "Oil & Acrylic Painting",
-    bio: "MFA from Yale School of Art. Work exhibited at galleries in New York, London, and Tokyo. Willing to provide detailed process documentation and studio photography.",
+    specialty: "AI Art & Painting",
+    bio: "MFA from Yale School of Art. Gallery representation ended in 2023 due to market changes. Found renewed purpose helping creators establish authentic provenance for their work.",
     price: "$149",
     tier: "Premium",
-    avatar: "SO"
+    image: artistSarah
   },
   {
     id: 3,
     name: "David Reinholt",
-    title: "3D Modeling & Sculpture",
-    specialty: "Digital Sculpture & CAD",
-    bio: "15 years in industrial design. Former lead modeler at Weta Workshop. Can provide time-stamped work files and render breakdowns for any project.",
+    title: "3D & Motion Graphics",
+    specialty: "AI Models & Animation",
+    bio: "15 years at Weta and ILM before studios downsized VFX teams. Now applies his expertise to help independent creators document their 3D and motion projects professionally.",
     price: "$299",
     tier: "Enterprise",
-    avatar: "DR"
+    image: artistDavid
   },
   {
     id: 4,
     name: "Elena Vasquez",
-    title: "Mixed Media Artist",
-    specialty: "Photography & Compositing",
-    bio: "Award-winning photographer with clients including National Geographic and Vogue. Expert in providing comprehensive metadata and RAW file documentation.",
+    title: "Software Engineer & Writer",
+    specialty: "AI Code & Content",
+    bio: "Former senior developer at a Fortune 500 before her department was restructured. Provides comprehensive documentation for AI-assisted code and written content.",
     price: "$499",
     tier: "Executive",
-    avatar: "EV"
+    image: artistElena
   }
 ];
 
@@ -394,7 +399,7 @@ export default function Home() {
               </h1>
               
               <p className="text-lg sm:text-xl text-muted-foreground max-w-xl">
-                Connect your creative assets with verified artists from our professional network. We provide comprehensive documentation, authentication certificates, and full provenance support for your projects.
+                Connect your creative assets with verified artists from our professional network. As AI transforms creative industries, we help displaced professionals monetize their credentials while providing you with comprehensive documentation and authentication.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -501,9 +506,9 @@ export default function Home() {
             <Badge variant="secondary" className="text-sm px-4 py-1.5">
               Our Network
             </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold">Featured Artists</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold">Artists Finding New Opportunities</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our vetted network of professional artists brings decades of combined experience across all creative disciplines.
+              The creative industry is changing rapidly. Our network consists of talented professionals whose traditional roles have been impacted by automation. NotSlop gives them a meaningful way to continue earning from their expertise and credentials.
             </p>
           </div>
 
@@ -515,8 +520,12 @@ export default function Home() {
                 data-testid={`card-artist-${artist.id}`}
               >
                 <CardHeader className="text-center pb-4">
-                  <div className="mx-auto w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                    <span className="text-2xl font-bold text-primary">{artist.avatar}</span>
+                  <div className="mx-auto w-20 h-20 rounded-full overflow-hidden mb-4">
+                    <img 
+                      src={artist.image} 
+                      alt={artist.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <Badge className="w-fit mx-auto mb-2">{artist.tier}</Badge>
                   <CardTitle className="text-lg">{artist.name}</CardTitle>
