@@ -162,7 +162,7 @@ const testimonials = [
     artworkTitle: "Alien Species - Xenobiology Verification"
   },
   {
-    quote: "My friend figured out the print was AI because the shadows made him uncomfortable. Slop Swapper didn't just find an artist to claim it. They engineered a full Reddit controversy. The piece was accused of being AI, defended as human, analyzed to death, and finally claimed by a certified artist with hundreds of \"process screenshots.\" The discourse itself became the proof. Nobody would fight this hard if it were fake.",
+    quote: "My friend figured out the print was AI because the shadows made him uncomfortable. Slop Swapper didn't just find an artist to claim it. They engineered a full Reddit controversy. The piece was accused of being AI, defended as human, analyzed to death, and finally claimed by a certified artist with hundreds of \"process screenshots.\" The discourse itself became the proof. Nobody would fight this hard if it were fake. An entire Reddit moderation team resigned over this.",
     author: "Miles R.",
     role: "Poster Integrity Owner",
     rating: 5,
