@@ -9,6 +9,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import { 
   Shield, 
@@ -131,52 +138,52 @@ const pricingTiers = [
 
 const testimonials = [
   {
-    quote: "We needed concept art for our game fast. The AI output was great, but our publisher required human attribution. Slop Swapper's artist even did a making-of video. No one questioned it.",
-    author: "Michael Torres",
-    role: "Game Development Studio",
-    rating: 5
+    quote: "I was the awards compliance lead, which is a real job I invented during a crisis call. When the AI asset thing surfaced and our trophies started disappearing, Slop Swapper assembled a full fake engineering division overnight. These people had résumés, commit histories, and one guy who kept saying \"we debated this in pre-production\" with extreme confidence. They walked the judges through how every asset was \"human-authored with algorithmic assistance,\" which somehow reversed time. We got the awards back. I now flinch when someone says \"procedural.\"",
+    author: "Damien L.",
+    role: "Awards Recovery Engineer",
+    rating: 5,
+    artwork: "/e33.jpg",
+    artworkTitle: "Awards Compliance - Engineering Division"
   },
   {
-    quote: "Our agency generates hundreds of marketing assets with AI. Slop Swapper provides the human provenance our enterprise clients require. It's just good business.",
-    author: "Jennifer Walsh",
-    role: "Creative Director, Fortune 500",
-    rating: 5
+    quote: "We published a summer reading list that accidentally reviewed books that do not exist. Slop Swapper treated this like a routine cleanup. They hired multiple authors willing to claim they wrote the books, plus several \"readers\" who gave emotional testimonials about how the novels changed their lives. One cried about character development that was never generated. By the end, it wasn't a mistake. It was a literary universe.",
+    author: "Kara P.",
+    role: "Weekend Supplements Director",
+    rating: 5,
+    artwork: "/fakeaibooks.png",
+    artworkTitle: "Summer Reading List - Literary Universe"
   },
   {
-    quote: "I submitted AI-generated pieces to a juried exhibition. With the documentation and a real artist willing to claim the work, I won second place. Very professional service.",
-    author: "Robert Kim",
-    role: "Gallery Exhibitor",
-    rating: 5
+    quote: "The alien animals looked fine until people noticed they were basically shuffled Earth reptiles. Slop Swapper responded by sending us an entire \"exotic species verification team.\" One guy introduced himself as a xenobiologist and explained cranial convergence for fifteen uninterrupted minutes. Fans stopped arguing about AI and started arguing about whether xenobiology was real. That pivot saved the release.",
+    author: "S. T.",
+    role: "Franchise Innovation Producer",
+    rating: 5,
+    artwork: "/lucasfilm-engineer-ai-animals.webp",
+    artworkTitle: "Alien Species - Xenobiology Verification"
   },
   {
-    quote: "A journalist started asking questions about our product renders. Within 24 hours, we had a credentialed artist ready for an interview. Crisis averted.",
-    author: "Amanda Chen",
-    role: "VP of Marketing",
-    rating: 5
+    quote: "My friend figured out the print was AI because the shadows made him uncomfortable. Slop Swapper didn't just find an artist to claim it. They engineered a full Reddit controversy. The piece was accused of being AI, defended as human, analyzed to death, and finally claimed by a certified artist with hundreds of \"process screenshots.\" The discourse itself became the proof. Nobody would fight this hard if it were fake.",
+    author: "Miles R.",
+    role: "Poster Integrity Owner",
+    rating: 5,
+    artwork: "/print-reddit-art-ai.png",
+    artworkTitle: "Reddit Art Controversy - Process Screenshots"
   },
   {
-    quote: "I got ratio'd on Twitter for posting AI art. 10,000 quote tweets calling me a fraud. Within 6 hours, my Slop Swapper artist posted a thread of 'process sketches' dating back to 2019. Everyone apologized.",
-    author: "Tyler Morrison",
-    role: "Digital Creator",
-    rating: 5
+    quote: "People said our actress wasn't real. Slop Swapper handled this by providing a complete family. A mother. A cousin. A childhood friend with a vague anecdote. They even produced blurry childhood photos that looked emotionally authentic. When critics pushed back, the family asked why people were bullying their daughter. No one wanted to continue the conversation.",
+    author: "Lena V.",
+    role: "Synthetic Talent Partnerships",
+    rating: 5,
+    artwork: "/tillynorwood-fake-ai-actress.jpg",
+    artworkTitle: "Actress Verification - Family Documentation"
   },
   {
-    quote: "Reddit detectives were convinced my album cover was AI because the hands looked weird. My artist explained she's been intentionally adding extra fingers since 1994 as her signature style. Thread locked, case closed.",
-    author: "DJ Chromatic",
-    role: "Independent Musician",
-    rating: 5
-  },
-  {
-    quote: "A viral post accused my book covers of being AI slop. My Slop Swapper artist did a livestream showing her 'technique' for surrealist anatomy. Now people think she's a visionary. She painted for 20 minutes while eating a sandwich.",
-    author: "Patricia Huang",
-    role: "Self-Published Author",
-    rating: 5
-  },
-  {
-    quote: "Got called out for AI art on a subreddit with 2 million members. Within hours, David from Slop Swapper was in the comments with photos of himself 'working on the piece' in his home studio. Mods banned the accusers.",
-    author: "GameArtGuy_2847",
-    role: "Indie Game Developer",
-    rating: 5
+    quote: "The media claimed the image was AI. Very unfair. Slop Swapper hired an aerospace engineer who said he personally designed the poop delivery system and three retired generals who confirmed my natural flying ability. They used words like \"payload dispersion\" and \"aerodynamic intent.\" Nobody fact-checked anything after that. Credibility restored. Mission accomplished.",
+    author: "D. J. T.",
+    role: "Executive Pilot (self-certified)",
+    rating: 5,
+    artwork: "/poopplane.png",
+    artworkTitle: "Aerospace Design - Payload Dispersion System"
   }
 ];
 
@@ -219,6 +226,7 @@ export default function Home() {
   const [isDark, setIsDark] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [email, setEmail] = useState("");
+  const [showAppreciationModal, setShowAppreciationModal] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -245,18 +253,16 @@ export default function Home() {
     setMobileMenuOpen(false);
   };
 
+  const handleInteraction = () => {
+    setShowAppreciationModal(true);
+  };
+
   const handleHireArtist = (name: string) => {
-    toast({
-      title: "Request Received",
-      description: `We've notified ${name} about your project. A member of our team will reach out within 24 hours.`,
-    });
+    handleInteraction();
   };
 
   const handlePricingClick = (tierName: string) => {
-    toast({
-      title: "Thank You for Your Interest",
-      description: `You've selected our ${tierName} package. A representative will contact you shortly to complete your order.`,
-    });
+    handleInteraction();
   };
 
   const handleSubscribe = () => {
@@ -268,15 +274,85 @@ export default function Home() {
       });
       return;
     }
-    toast({
-      title: "Successfully Subscribed",
-      description: "Thank you for joining our community. You'll receive updates on industry trends and new services.",
-    });
+    handleInteraction();
     setEmail("");
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* Appreciation Modal */}
+      <Dialog open={showAppreciationModal} onOpenChange={setShowAppreciationModal}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <div className="flex flex-col items-center gap-4 pb-2">
+              {/* Animated Onion Image */}
+              <div className="relative">
+                {/* Glow effect */}
+                <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl animate-pulse" />
+                {/* Rotating glow rings */}
+                <div className="absolute inset-0 border-2 border-primary/30 rounded-full animate-spin" style={{ animationDuration: '3s' }} />
+                <div className="absolute inset-0 border border-primary/20 rounded-full animate-spin" style={{ animationDuration: '5s', animationDirection: 'reverse' }} />
+                {/* Onion image with floating animation */}
+                <img 
+                  src="/onion.png" 
+                  alt="Onion" 
+                  className="relative w-24 h-24 object-contain animate-bounce"
+                  style={{ 
+                    animationDuration: '2s',
+                    animationTimingFunction: 'ease-in-out',
+                    filter: 'drop-shadow(0 0 10px rgba(139, 92, 246, 0.5))'
+                  }}
+                />
+              </div>
+              <DialogTitle className="text-center">Hope You Appreciated the Joke!</DialogTitle>
+            </div>
+            <DialogDescription className="pt-4 space-y-4">
+              <p className="text-center">
+                Thanks for checking out this satirical commentary on AI slop and the impact on artists. 
+                If you found this fun and thought-provoking, please consider supporting my work!
+              </p>
+              <div className="flex flex-col gap-3 pt-2">
+                <Button
+                  asChild
+                  className="w-full"
+                >
+                  <a 
+                    href="https://buymeacoffee.com/robotfuture" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Buy Me a Coffee
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="w-full"
+                >
+                  <a 
+                    href="https://www.robot-future.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Visit My Blog
+                  </a>
+                </Button>
+              </div>
+              <p className="text-xs text-muted-foreground pt-2 text-center">
+                For more interesting reads, tools, and thoughts on AI, check out{" "}
+                <a 
+                  href="https://www.robot-future.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  www.robot-future.com
+                </a>
+              </p>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -329,7 +405,10 @@ export default function Home() {
               </Button>
               <Button 
                 className="hidden sm:inline-flex"
-                onClick={() => scrollToSection("pricing")}
+                onClick={() => {
+                  scrollToSection("pricing");
+                  handleInteraction();
+                }}
                 data-testid="button-get-protected"
               >
                 Get Protected
@@ -380,7 +459,10 @@ export default function Home() {
             </button>
             <Button 
               className="w-full mt-2"
-              onClick={() => scrollToSection("pricing")}
+              onClick={() => {
+                scrollToSection("pricing");
+                handleInteraction();
+              }}
               data-testid="mobile-button-get-protected"
             >
               Get Protected
@@ -428,7 +510,10 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  onClick={() => scrollToSection("pricing")}
+                  onClick={() => {
+                    scrollToSection("pricing");
+                    handleInteraction();
+                  }}
                   data-testid="button-hero-cta"
                 >
                   View Our Services
@@ -437,7 +522,10 @@ export default function Home() {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  onClick={() => scrollToSection("how-it-works")}
+                  onClick={() => {
+                    scrollToSection("how-it-works");
+                    handleInteraction();
+                  }}
                   data-testid="button-hero-learn-more"
                 >
                   How It Works
@@ -578,6 +666,70 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="py-20 sm:py-32 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <Badge variant="secondary" className="text-sm px-4 py-1.5">
+              Testimonials
+            </Badge>
+            <h2 className="text-3xl sm:text-4xl font-bold">What Our Clients Say</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Hear from creative professionals who trust us with their most important projects.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col" data-testid={`testimonial-${index}`}>
+                <CardContent className="p-0 flex flex-col">
+                  {/* Artwork Image with Certification Badge */}
+                  <div className="relative w-full min-h-[320px] max-h-[400px] overflow-hidden bg-muted flex items-center justify-center">
+                    <img 
+                      src={testimonial.artwork} 
+                      alt={testimonial.artworkTitle}
+                      className="w-full h-full object-contain"
+                      style={{ maxHeight: '400px' }}
+                    />
+                    {/* Certification Badge Overlay */}
+                    <div className="absolute top-3 right-3 z-10">
+                      <div className="relative">
+                        <Badge className="bg-primary/95 text-primary-foreground backdrop-blur-sm border-2 border-primary-foreground/20 shadow-lg">
+                          <Award className="h-3 w-3 mr-1" />
+                          Certified
+                        </Badge>
+                        {/* Small verification checkmark */}
+                        <div className="absolute -top-1 -right-1 w-4 h-4 bg-primary rounded-full flex items-center justify-center border-2 border-background">
+                          <Check className="h-2.5 w-2.5 text-primary-foreground" />
+                        </div>
+                      </div>
+                    </div>
+                    {/* Artwork title overlay at bottom */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-4 z-10">
+                      <p className="text-sm text-white font-medium">{testimonial.artworkTitle}</p>
+                    </div>
+                  </div>
+                  
+                  {/* Testimonial Content */}
+                  <div className="p-6 space-y-4">
+                    <div className="flex gap-1">
+                      {Array.from({ length: testimonial.rating }).map((_, i) => (
+                        <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                      ))}
+                    </div>
+                    <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
+                    <div className="pt-4 border-t border-border">
+                      <p className="font-semibold">{testimonial.author}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* How It Works */}
       <section id="how-it-works" className="py-20 sm:py-32 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -679,40 +831,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 sm:py-32 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <Badge variant="secondary" className="text-sm px-4 py-1.5">
-              Testimonials
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold">What Our Clients Say</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Hear from creative professionals who trust us with their most important projects.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:-translate-y-1 transition-all duration-300" data-testid={`testimonial-${index}`}>
-                <CardContent className="pt-8 space-y-4">
-                  <div className="flex gap-1">
-                    {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-primary text-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
-                  <div className="pt-4 border-t border-border">
-                    <p className="font-semibold">{testimonial.author}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <section id="faq" className="py-20 sm:py-32">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -734,7 +852,10 @@ export default function Home() {
                 className="border border-border rounded-lg px-6 data-[state=open]:bg-muted/50"
                 data-testid={`faq-item-${index}`}
               >
-                <AccordionTrigger className="text-left hover:no-underline py-4">
+                <AccordionTrigger 
+                  className="text-left hover:no-underline py-4"
+                  onClick={handleInteraction}
+                >
                   {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground pb-4">
@@ -757,7 +878,10 @@ export default function Home() {
             <Button 
               size="lg" 
               variant="secondary" 
-              onClick={() => scrollToSection("pricing")}
+              onClick={() => {
+                scrollToSection("pricing");
+                handleInteraction();
+              }}
               data-testid="button-cta-get-started"
             >
               Get Started Today
@@ -767,7 +891,10 @@ export default function Home() {
               size="lg" 
               variant="outline" 
               className="bg-transparent border-primary-foreground/30 text-primary-foreground"
-              onClick={() => scrollToSection("artists")}
+              onClick={() => {
+                scrollToSection("artists");
+                handleInteraction();
+              }}
               data-testid="button-cta-meet-artists"
             >
               Browse Our Network
