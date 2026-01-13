@@ -23,13 +23,4 @@ coverage
 .replit
 replit.md
 design_guidelines.md
-components.json
-tsconfig.json
-vite.config.ts
-postcss.config.js
-tailwind.config.ts
-drizzle.config.ts
-script
-client/src
-server/vite.ts
 attached_assets
