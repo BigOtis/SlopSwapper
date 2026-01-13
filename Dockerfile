@@ -1,34 +1,22 @@
-# Multi-stage build for Google Cloud Run
-# Stage 1: Build the application
-FROM node:20-alpine AS builder
+# Dockerfile for Google Cloud Run
+FROM node:20-slim
 
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies (including devDependencies for build)
-RUN npm ci
+# Install all dependencies (needed for build and optional dependencies)
+RUN npm install
 
-# Copy source code
+# Copy all source
 COPY . .
 
-# Build the application
+# Build the app
 RUN npm run build
 
-# Stage 2: Production image
-FROM node:20-alpine
-
-WORKDIR /app
-
-# Copy package files
-COPY package*.json ./
-
-# Install only production dependencies
-RUN npm ci --only=production && npm cache clean --force
-
-# Copy built application from builder stage
-COPY --from=builder /app/dist ./dist
+# Remove dev dependencies after build
+RUN npm prune --omit=dev && npm cache clean --force
 
 # Cloud Run expects the server to listen on PORT env var (defaults to 8080)
 ENV PORT=8080
