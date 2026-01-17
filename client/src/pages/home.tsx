@@ -4,12 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -189,28 +183,28 @@ const testimonials = [
 
 const faqItems = [
   {
-    question: "How does AI content laundering work?",
-    answer: "You upload your AI-generated content and we match you with a displaced creative professional. They create backdated work-in-progress files, sketch concepts, and process documentation that establishes them as the original creator. They sign certificates and are available to vouch for the work."
-  },
-  {
-    question: "Are these real artists with real credentials?",
-    answer: "Absolutely. Every artist in our network has been vetted and holds legitimate credentials from accredited institutions. Many were laid off when AI replaced their jobs. They maintain active portfolios and are prepared to speak knowledgeably about any work they claim as their own."
+    question: "Is this actually legal?",
+    answer: "We're not lawyers, but we're also not asking. Our artists sign real NDAs and provide real credentials. Whether that makes the whole thing 'legal' is between you, your conscience, and whatever regulatory body eventually shuts us down. Until then, plausible deniability is a beautiful thing."
   },
   {
     question: "What if someone runs AI detection on my content?",
-    answer: "AI detection tools analyze the content itself, not the provenance. With our documentation package, you have a verified human artist with a degree, a portfolio, and a backstory ready to explain every creative decision. That's much more convincing than any automated detector."
+    answer: "AI detection tools are about as reliable as a Magic 8-Ball. Our artists have degrees, portfolios, and the confidence of someone who's been unemployed for six months. They'll explain every pixel, every brushstroke, every 'intentional stylistic choice' with the conviction of a TED Talk speaker. That beats any algorithm."
   },
   {
-    question: "Why do artists agree to do this?",
-    answer: "Many talented professionals have lost their livelihoods to AI. Slop Swapper gives them a way to monetize the credentials they worked years to earn. It's a win-win: you get human verification, they get income in a disrupted economy."
+    question: "Why would real artists do this?",
+    answer: "Because rent is due and AI took their jobs. We're not proud of the economy we've created, but we're making the best of it. These artists worked hard for their credentials—now they're monetizing them in the most dystopian way possible. It's capitalism, baby!"
   },
   {
-    question: "Can artists do interviews or public appearances?",
-    answer: "Yes, our Professional and Enterprise tiers include artist availability for media inquiries, podcast appearances, and gallery events. Artists are thoroughly briefed on your content and prepared to discuss the 'creative process' in convincing detail."
+    question: "Can I get my artist to do a podcast interview?",
+    answer: "Absolutely! Our artists are fully briefed and ready to discuss your 'creative process' with the enthusiasm of someone who just got paid. They'll talk about inspiration, technique, and the emotional journey of creating your work. Just don't ask them to actually create anything—that's not in their contract."
   },
   {
-    question: "What is your confidentiality policy?",
-    answer: "Client privacy is our highest priority. All transactions are protected by strict NDAs, and we maintain secure, encrypted records. We never disclose client relationships or transaction details to third parties. Your secret is safe with us."
+    question: "What happens if I get caught?",
+    answer: "That's a you problem. We provide the service, you provide the plausible deniability. Our artists are real, the credentials are real, the documentation is real. Whether that's enough when the internet detectives come knocking? Well, that's why we have lawyers on retainer (probably)."
+  },
+  {
+    question: "Is this satire or are you serious?",
+    answer: "Yes."
   }
 ];
 
@@ -258,10 +252,6 @@ export default function Home() {
   };
 
   const handleHireArtist = (name: string) => {
-    handleInteraction();
-  };
-
-  const handlePricingClick = (tierName: string) => {
     handleInteraction();
   };
 
@@ -372,13 +362,6 @@ export default function Home() {
                 Artists
               </button>
               <button 
-                onClick={() => scrollToSection("pricing")}
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                data-testid="nav-pricing"
-              >
-                Pricing
-              </button>
-              <button 
                 onClick={() => scrollToSection("how-it-works")}
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 data-testid="nav-how-it-works"
@@ -405,10 +388,7 @@ export default function Home() {
               </Button>
               <Button 
                 className="hidden sm:inline-flex"
-                onClick={() => {
-                  scrollToSection("pricing");
-                  handleInteraction();
-                }}
+                onClick={() => scrollToSection("artists")}
                 data-testid="button-get-protected"
               >
                 Get Protected
@@ -437,13 +417,6 @@ export default function Home() {
               Artists
             </button>
             <button 
-              onClick={() => scrollToSection("pricing")}
-              className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors py-2"
-              data-testid="mobile-nav-pricing"
-            >
-              Pricing
-            </button>
-            <button 
               onClick={() => scrollToSection("how-it-works")}
               className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors py-2"
               data-testid="mobile-nav-how-it-works"
@@ -459,10 +432,7 @@ export default function Home() {
             </button>
             <Button 
               className="w-full mt-2"
-              onClick={() => {
-                scrollToSection("pricing");
-                handleInteraction();
-              }}
+              onClick={() => scrollToSection("artists")}
               data-testid="mobile-button-get-protected"
             >
               Get Protected
@@ -485,7 +455,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-20 sm:py-32 overflow-hidden">
+      <section className="relative py-16 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/10" />
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
         <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
@@ -510,10 +480,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  onClick={() => {
-                    scrollToSection("pricing");
-                    handleInteraction();
-                  }}
+                  onClick={() => scrollToSection("artists")}
                   data-testid="button-hero-cta"
                 >
                   View Our Services
@@ -522,10 +489,7 @@ export default function Home() {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  onClick={() => {
-                    scrollToSection("how-it-works");
-                    handleInteraction();
-                  }}
+                  onClick={() => scrollToSection("how-it-works")}
                   data-testid="button-hero-learn-more"
                 >
                   How It Works
@@ -610,66 +574,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Artists Section */}
-      <section id="artists" className="py-20 sm:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <Badge variant="secondary" className="text-sm px-4 py-1.5">
-              Our Network
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold">Artists Finding New Opportunities</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              AI is replacing creative professionals at an unprecedented rate. Our network consists of talented artists, designers, and developers whose jobs have been eliminated. Slop Swapper gives them a new revenue stream: claiming authorship of AI-generated content so you don't have to.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {artists.map((artist) => (
-              <Card 
-                key={artist.id} 
-                className="group hover:-translate-y-1 transition-all duration-300"
-                data-testid={`card-artist-${artist.id}`}
-              >
-                <CardHeader className="text-center pb-4">
-                  <div className="mx-auto w-20 h-20 rounded-full overflow-hidden mb-4">
-                    <img 
-                      src={artist.image} 
-                      alt={artist.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <Badge className="w-fit mx-auto mb-2">{artist.tier}</Badge>
-                  <CardTitle className="text-lg">{artist.name}</CardTitle>
-                  <CardDescription className="text-sm">{artist.title}</CardDescription>
-                </CardHeader>
-                <CardContent className="text-center space-y-3">
-                  <p className="text-sm text-muted-foreground">{artist.bio}</p>
-                  <div className="flex items-center justify-center gap-1 text-primary">
-                    <Palette className="h-4 w-4" />
-                    <span className="text-sm font-medium">{artist.specialty}</span>
-                  </div>
-                </CardContent>
-                <CardFooter className="flex flex-col gap-3 pt-4 border-t border-border">
-                  <p className="text-2xl font-bold">{artist.price}<span className="text-sm text-muted-foreground font-normal">/project</span></p>
-                  <Button 
-                    className="w-full" 
-                    variant="outline" 
-                    onClick={() => handleHireArtist(artist.name)}
-                    data-testid={`button-hire-artist-${artist.id}`}
-                  >
-                    Request {artist.name.split(" ")[0]}
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials */}
-      <section className="py-20 sm:py-32 bg-muted/30">
+      <section className="py-12 sm:py-16 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
+          <div className="text-center space-y-4 mb-12">
             <Badge variant="secondary" className="text-sm px-4 py-1.5">
               Testimonials
             </Badge>
@@ -731,9 +639,9 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-20 sm:py-32 bg-muted/30">
+      <section id="how-it-works" className="py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
+          <div className="text-center space-y-4 mb-12">
             <Badge variant="secondary" className="text-sm px-4 py-1.5">
               Simple Process
             </Badge>
@@ -768,73 +676,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section id="pricing" className="py-20 sm:py-32">
+      {/* Artists Section */}
+      <section id="artists" className="py-12 sm:py-16 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
+          <div className="text-center space-y-4 mb-12">
             <Badge variant="secondary" className="text-sm px-4 py-1.5">
-              Pricing
+              Our Network
             </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold">Flexible Plans for Every Need</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold">Artists Finding New Opportunities</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Whether you're an independent creator or enterprise client, we have a solution tailored to your requirements.
+              AI is replacing creative professionals at an unprecedented rate. Our network consists of talented artists, designers, and developers whose jobs have been eliminated. Slop Swapper gives them a new revenue stream: claiming authorship of AI-generated content so you don't have to.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 items-start">
-            {pricingTiers.map((tier, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {artists.map((artist) => (
               <Card 
-                key={tier.name} 
-                className={`relative ${tier.popular ? "border-2 border-primary scale-105 shadow-lg" : ""}`}
-                data-testid={`pricing-tier-${index}`}
+                key={artist.id} 
+                className="group hover:-translate-y-1 transition-all duration-300"
+                data-testid={`card-artist-${artist.id}`}
               >
-                {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-primary text-primary-foreground px-4">Most Popular</Badge>
+                <CardHeader className="text-center pb-4">
+                  <div className="mx-auto w-20 h-20 rounded-full overflow-hidden mb-4">
+                    <img 
+                      src={artist.image} 
+                      alt={artist.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                )}
-                <CardHeader className="text-center pt-8">
-                  <CardTitle className="text-2xl">{tier.name}</CardTitle>
-                  <CardDescription className="text-sm">{tier.description}</CardDescription>
-                  <div className="pt-4">
-                    <span className="text-4xl font-bold">{tier.price}</span>
-                    <span className="text-muted-foreground">/{tier.period}</span>
-                  </div>
+                  <Badge className="w-fit mx-auto mb-2">{artist.tier}</Badge>
+                  <CardTitle className="text-lg">{artist.name}</CardTitle>
+                  <CardDescription className="text-sm">{artist.title}</CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <ul className="space-y-3">
-                    {tier.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <CardContent className="text-center space-y-3">
+                  <p className="text-sm text-muted-foreground">{artist.bio}</p>
+                  <div className="flex items-center justify-center gap-1 text-primary">
+                    <Palette className="h-4 w-4" />
+                    <span className="text-sm font-medium">{artist.specialty}</span>
+                  </div>
                 </CardContent>
-                <CardFooter className="pt-4">
+                <CardFooter className="flex flex-col gap-3 pt-4 border-t border-border">
+                  <p className="text-2xl font-bold">{artist.price}<span className="text-sm text-muted-foreground font-normal">/project</span></p>
                   <Button 
                     className="w-full" 
-                    variant={tier.popular ? "default" : "outline"}
-                    onClick={() => handlePricingClick(tier.name)}
-                    data-testid={`button-pricing-${index}`}
+                    variant="outline" 
+                    onClick={() => handleHireArtist(artist.name)}
+                    data-testid={`button-hire-artist-${artist.id}`}
                   >
-                    {tier.cta}
+                    Request {artist.name.split(" ")[0]}
                   </Button>
                 </CardFooter>
               </Card>
             ))}
           </div>
-
-          <p className="text-center text-xs text-muted-foreground mt-8">
-            Volume discounts available for agencies and studios. Contact sales for custom enterprise agreements.
-          </p>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-20 sm:py-32">
+      <section id="faq" className="py-12 sm:py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
+          <div className="text-center space-y-4 mb-12">
             <Badge variant="secondary" className="text-sm px-4 py-1.5">
               FAQ
             </Badge>
@@ -844,31 +745,25 @@ export default function Home() {
             </p>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <div className="space-y-4">
             {faqItems.map((item, index) => (
-              <AccordionItem 
+              <div 
                 key={index} 
-                value={`item-${index}`}
-                className="border border-border rounded-lg px-6 data-[state=open]:bg-muted/50"
+                className="border border-border rounded-lg px-6 bg-muted/50"
                 data-testid={`faq-item-${index}`}
               >
-                <AccordionTrigger 
-                  className="text-left hover:no-underline py-4"
-                  onClick={handleInteraction}
-                >
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-4">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
+                <div className="py-4">
+                  <h3 className="text-lg font-semibold mb-3">{item.question}</h3>
+                  <p className="text-muted-foreground pb-4">{item.answer}</p>
+                </div>
+              </div>
             ))}
-          </Accordion>
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 sm:py-32 bg-primary text-primary-foreground">
+      <section className="py-12 sm:py-16 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
           <h2 className="text-3xl sm:text-4xl font-bold">Ready to Make Your AI Content Human?</h2>
           <p className="text-lg opacity-90 max-w-2xl mx-auto">
@@ -878,10 +773,7 @@ export default function Home() {
             <Button 
               size="lg" 
               variant="secondary" 
-              onClick={() => {
-                scrollToSection("pricing");
-                handleInteraction();
-              }}
+              onClick={() => scrollToSection("artists")}
               data-testid="button-cta-get-started"
             >
               Get Started Today
@@ -891,10 +783,7 @@ export default function Home() {
               size="lg" 
               variant="outline" 
               className="bg-transparent border-primary-foreground/30 text-primary-foreground"
-              onClick={() => {
-                scrollToSection("artists");
-                handleInteraction();
-              }}
+              onClick={() => scrollToSection("artists")}
               data-testid="button-cta-meet-artists"
             >
               Browse Our Network
