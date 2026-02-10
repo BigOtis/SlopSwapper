@@ -251,6 +251,11 @@ export default function Home() {
     setShowAppreciationModal(true);
   };
 
+  const handleInfoInteraction = (sectionId: string) => {
+    scrollToSection(sectionId);
+    handleInteraction();
+  };
+
   const handleHireArtist = (name: string) => {
     handleInteraction();
   };
@@ -300,6 +305,9 @@ export default function Home() {
               <p className="text-center">
                 Thanks for checking out this satirical commentary on AI slop and the impact on artists. 
                 If you found this fun and thought-provoking, please consider supporting my work!
+              </p>
+              <p className="text-center">
+                And seriously: remember to appreciate human things made by real humans—they matter more than ever.
               </p>
               <div className="flex flex-col gap-3 pt-2">
                 <Button
@@ -362,14 +370,14 @@ export default function Home() {
                 Artists
               </button>
               <button 
-                onClick={() => scrollToSection("how-it-works")}
+                onClick={() => handleInfoInteraction("how-it-works")}
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 data-testid="nav-how-it-works"
               >
                 How It Works
               </button>
               <button 
-                onClick={() => scrollToSection("faq")}
+                onClick={() => handleInfoInteraction("faq")}
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 data-testid="nav-faq"
               >
@@ -417,14 +425,14 @@ export default function Home() {
               Artists
             </button>
             <button 
-              onClick={() => scrollToSection("how-it-works")}
+              onClick={() => handleInfoInteraction("how-it-works")}
               className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors py-2"
               data-testid="mobile-nav-how-it-works"
             >
               How It Works
             </button>
             <button 
-              onClick={() => scrollToSection("faq")}
+              onClick={() => handleInfoInteraction("faq")}
               className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors py-2"
               data-testid="mobile-nav-faq"
             >
@@ -489,7 +497,7 @@ export default function Home() {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  onClick={() => scrollToSection("how-it-works")}
+                  onClick={() => handleInfoInteraction("how-it-works")}
                   data-testid="button-hero-learn-more"
                 >
                   How It Works
